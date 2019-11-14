@@ -294,14 +294,33 @@ case node['platform_family']
 when 'rhel'
   default['openstack']['common']['platform'] = {
     'common_client_packages' => ['python-openstackclient'],
+    'python2_packages' => [
+      'python',
+      'python2-pip',
+      'python2-setuptools',
+      'python-devel',
+      'python-virtualenv',
+      'python-wheel',
+    ],
     'package_overrides' => '',
   }
 when 'debian'
   default['openstack']['common']['platform'] = {
     'common_client_packages' => ['python-openstackclient'],
+    'python2_packages' => [
+      'python',
+      'python-dev',
+      'python-pip',
+      'python-setuptools',
+      'python-virtualenv',
+      'python-wheel',
+    ],
     'package_overrides' => '',
   }
 end
+
+# The location of the OSC bash completion file
+default['openstack']['common']['bash_complete'] = '/etc/bash_completion.d/osc.bash_completion'
 
 # The name of the Chef role that installs the Keystone Service API
 default['openstack']['identity_service_chef_role'] = 'os-identity'
