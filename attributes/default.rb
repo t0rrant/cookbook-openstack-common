@@ -43,6 +43,7 @@ default['openstack']['common']['services'] = {
   'dns' => 'designate',
   'identity' => 'keystone',
   'image' => 'glance',
+  'key-manager' => 'barbican',
   'network' => 'neutron',
   'object-storage' => 'swift',
   'orchestration' => 'heat',
