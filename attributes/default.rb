@@ -237,6 +237,11 @@ default['openstack']['logging']['loggers'] = {
     'handlers' => 'prod,debug',
     'qualname' => 'nova.osapi_compute.wsgi.server',
   },
+  'barbican' => {
+    'level' => 'DEBUG',
+    'handlers' => 'prod,debug',
+    'qualname' => 'barbican',
+  },
 }
 
 # Allow configured formatters in logging.conf
